@@ -1,0 +1,62 @@
+
+.box{
+    display: flex;
+    height: 100px;
+    background-color:#fff
+}
+.title{
+    font-size: 25px;
+    font-family: 'Anton', sans-serif;
+    display: flex;
+    color: #fff;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.extra{
+    padding: 10px;
+}
+.space{
+    padding-right: 20px;
+}
+.icon{
+    color: #c3c0c0;
+    line-height: 1.5;
+    padding-right:10px
+}
+.search{
+    background: #fff;
+    display: flex;
+    border-radius: 8px;
+    border: 1px solid #dfe1e5;
+    box-shadow: none;
+    border-radius: 24px;
+    z-index: 3;
+    height: 44px;
+    width: 382px;
+}
+.map{
+    width: 100%;
+}
+.search1{
+    flex: 1;
+    display: flex;
+    padding: 5px 8px 0 16px;
+    padding-left: 16px;
+    padding-left: 20px;
+}
+.text{
+    font-size: 20px;
+    font-family: cursive;
+    color: black;
+}
+.search4{
+    background-color: transparent;
+    border: none;
+    color: rgba(0,0,0,.87);
+    outline: none;
+    display: flex;
+    flex: 100%;
+}
+.search-text{
+    font: 17px arial,sans-serif;
+}

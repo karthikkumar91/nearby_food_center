@@ -1,0 +1,17 @@
+.foot{
+    background-color: black;
+    color: white;
+}
+.icon{
+    display: flex;
+    justify-content: center;
+}
+.icon i{
+    padding: 10px;
+}
+.copy{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 3;
+}

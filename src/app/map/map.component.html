@@ -1,0 +1,38 @@
+<div class="container-fluid first">
+    <div class="row">
+        <div class="col-md-12">
+          <aside class="mapContainer"  [class.fixed]="fixed">
+            <agm-map [class.fixed]="fixed"  [latitude]="lat" [longitude]="lng"  [zoom]="16" >
+              <agm-marker [latitude]="lat" [longitude]="lng" ></agm-marker>
+              <agm-marker *ngFor="let data of locationnames; let i = index"   [latitude]="data.location.lat" [longitude]="data.location.lng" [label]="{
+                    color: '#ffffff',
+                    fontWeight: 'bold',
+                    text: (i + 1).toString()
+                    }" (markerClick)="getLocation($event)"   >
+                   <agm-info-window class="alert alert-success">
+                      <h2 class="text-info">{{data.name}}</h2>
+                      <span>{{data.location.formattedAddress}}</span>
+                      <!-- <a routerLink="">Details</a> -->
+                  </agm-info-window>
+              </agm-marker>
+            </agm-map>
+          </aside>
+      
+        </div>
+      </div>
+      <div class="detail" style="   height: 550px;overflow: auto;">
+        <div [@listAnimation]="locationnames"
+            (@listAnimation.start)="logAnimation($event)"
+            (@listAnimation.done)="logAnimation($event)">
+          <a class="box list-group-item" routerLink="/details/{{data.id}}/{{data.location.lat}}/{{data.location.lng}}" target="_blank"
+           *ngFor="let data of locationnames; let i = index">
+                      
+          <div  class="list-group-item-text text-info text">{{i+1}})</div>
+          <div class="col-md-4 detail-section list-group-item-heading text-info text" >{{data.name}}</div>
+                 
+                  <!-- <div class="col-md-4 rating list-group-item-text text-info">{{data.id}}</div> -->
+          </a>
+        </div>
+      </div>
+    
+</div>

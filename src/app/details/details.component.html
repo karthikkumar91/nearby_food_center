@@ -1,0 +1,68 @@
+<div class="container-fluid">
+    <div class="row bg-primary first">
+      <div class="col-md-6">
+        <div class="row extra">
+          <div class="col-md-6 title"><div class="space"><p>Foursquare</p></div>
+          <!-- <div class="col-md-6"> -->
+              <div class="search">
+                  <div class="search1">
+                      <i class="fas fa-search icon"></i>
+                      <input class="search4 search-text" maxlength="2048"id="place"  #search [formControl]="searchControl"
+                      name="q" type="text" jsaction="paste:puy29d" aria-autocomplete="both" aria-haspopup="false" autocapitalize="off" 
+                      autocomplete="off" autocorrect="off" role="combobox" spellcheck="false" title="Search" value="" 
+                      aria-label="Search" placeholder="search">
+                  </div>
+                </div>
+              </div>
+          <!-- </div> -->
+        </div>
+      </div>
+      <div class="col-md-6"></div>
+    </div>
+    </div>
+   <div *ngIf="change; then map else detail"></div>
+   <ng-template #map>
+        <app-map [lat]=latitude [lng]=longitude></app-map>
+   </ng-template>
+   
+   <ng-template #detail>
+      <div class="container">
+          <div class="row">
+            <div class="img-section col-md-12">
+                <img class="img-fluid rounded mx-auto d-block" src={{photo}} >           
+            </div>
+          </div>
+          <div class="row">
+              <div>
+                <div><p class="text1">HOTEL {{name}}</p></div>
+                <div><p class="text1">details</p></div>
+                  <p class="text2">{{address}}  {{cross}}</p>
+              </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-md-4">
+              <p class="text1">Info</p>
+              <div>
+                <div class="text2">{{location}}</div>
+                <hr>
+                <div class="text1">Catagories</div><p></p>
+                <p class="text2">{{catagories}}</p>
+              </div>
+            </div>
+            <div class="col-md-4"></div>
+            <div class="col-md-4 local-map">
+             
+              <agm-map [class.fixed]="fixed"  [latitude]="lat" [longitude]="lng"  [zoom]="14" >
+                <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>  
+              
+              </agm-map>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+              <p>feedback</p>
+          </div>
+      </div>
+   </ng-template>
+   

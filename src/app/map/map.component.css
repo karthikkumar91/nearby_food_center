@@ -1,0 +1,43 @@
+
+agm-map {
+    height: 550px;
+    
+}
+.text{
+    font-size: 20px;
+    font-family: cursive;
+    color: black;
+}
+.detail{
+    position: absolute;
+    top:73px;
+    width: 23%;
+   
+    /* background-color: aliceblue; */
+}
+.box{
+    display: flex;
+    height: 100px;
+    background-color:#fff
+}
+@media screen and (max-width: 1300px) {
+    .detail {
+        width: 40%;
+    }
+  }
+  @media screen and (max-width: 1000px) {
+    .detail {
+        width: 50%;
+    }
+  }
+  @media screen and (max-width: 800px) {
+    .detail {
+        width: 50%;
+    }
+  }
+@media screen and (max-width: 768px) {
+    .detail {
+        position: relative;
+        width: 100%;
+    }
+  }
